@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	<h1>Recetas</h1>
+	<h2>Listado</h2>
+
+	<ul>
+		{% for recipe in recipes %}
+			<li class="recipe"><a href="{{ url('recipes_show', {recipe_url: recipe.url}) }}">{{ recipe.name }}.</a></li>
+		{% endfor %}
+	</ul>
+
+	{% include '::footer.html.twig' %}
+{% endblock %}

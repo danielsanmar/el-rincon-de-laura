@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ recipe.url }}{% endblock %}
+
+{% block body %}
+
+		<h1>{{ recipe.name }}</h1>
+		<h2>Por {{ recipe.name }}</h2>
+
+		<p>{{ recipe.difficulty }} ({% if recipe.difficulty == 'Fácil' %} recomendada para usuarios inexpertos {% elseif recipe.difficulty == 'Media' %} recomendada para usuarios con algo de experiencia {% else %} recomendada para usuarios expertos {% endif %})</p>
+		
+		{#
+		<p>{{ recipe.author }}</p>
+
+		{% for ingredient in recipe.ingredients %}
+			<li>{{ ingredient }}
+		{% endfor %}
+		#}
+
+		<h3>Ingredientes</h3>
+		
+		<br>
+		<br>
+
+		<a href="{{ url('recipes_list') }}">volver al listado.</a>
+
+		<br>
+		<br>
+
+
+	{% include '::footer.html.twig' %}
+{% endblock %}
