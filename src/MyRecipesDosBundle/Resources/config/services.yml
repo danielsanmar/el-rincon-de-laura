@@ -1,4 +1,0 @@
-services:
-#    my_recipes_dos.example:
-#        class: MyRecipesDosBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
