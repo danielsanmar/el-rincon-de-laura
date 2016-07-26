@@ -1,0 +1,54 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Create author{% endblock %}
+
+{% block body %}
+	{{ form_start(form, {'attr' : { 'id' : 'recipe-create'}}) }}
+	{{ form_errors(form) }}
+	<ul>
+
+		<li>
+			{{ form_label(form.url) }}:
+			{{ form_errors(form.url) }}
+			{{ form_widget(form.url) }}
+		</li>
+
+		<li>
+			{{ form_label(form.name) }}:
+			{{ form_errors(form.name) }}
+			{{ form_widget(form.name) }}
+		</li>
+
+
+		<li>
+			{{ form_label(form.difficulty) }}:
+			{{ form_errors(form.difficulty) }}
+			{{ form_widget(form.difficulty) }}
+		</li>
+
+
+		<li>
+			{{ form_label(form.description) }}:
+			{{ form_errors(form.description) }}
+			{{ form_widget(form.description) }}
+		</li>
+
+		<li>
+			{{ form_widget(form.save) }}
+		</li>
+
+	</ul>
+
+	{{ form_end(form)}}
+
+	<br>
+	<br>
+	
+	<a href="{{ url('recipes_show') }}">ver listado.</a>
+
+	<br>
+	<br>
+	
+	{% include '::footer.html.twig' %}
+
+{% endblock %}

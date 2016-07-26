@@ -1,0 +1,6 @@
+<h3>Últimas 5 recetas añadidas</h3>
+<ul>
+	{% for recipe in recipes %}
+		<li>{{ recipe.name }}</li>
+	{% endfor %}
+</ul>

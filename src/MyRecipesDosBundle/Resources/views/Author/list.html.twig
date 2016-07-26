@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	<h1>Autores</h1>
+	<h2>Listado</h2>
+
+	<ul>
+		{% for author in authors %}
+			<li class="author">{{ author.name }} {{ author.surname }}. <a href="{{ url('authors_delete', {author_id: author.id}) }}"><small>(eliminar)</small></a></li>
+		{% endfor %}
+	</ul>
+
+		<br>
+		<br>
+
+		<a href="{{ url('author_create') }}">crear autor.</a>
+
+		<br>
+		<br>
+
+	{% include '::footer.html.twig' %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	<h1>Recetas</h1>
+	<h2>Listado</h2>
+
+	<ul>
+		{% for recipe in recipes %}
+			<li class="recipe"><a href="{{ url('recipes_show', {recipe_url: recipe.url}) }}">{{ recipe.name }}.</a> <a href="{{ url('recipes_update', {recipe_id: recipe.id}) }}"><small>(editar)</small></a> <a href="{{ url('recipes_delete', {recipe_id: recipe.id}) }}"><small>(eliminar)</small></a></li>
+		{% endfor %}
+	</ul>
+
+	<br>
+	<br>
+
+	<a href="{{ url('recipes_create') }}">crear receta.</a>
+
+	<br>
+	<br>
+
+	{% include '::footer.html.twig' %}
+{% endblock %}

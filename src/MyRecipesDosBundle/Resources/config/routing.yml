@@ -1,0 +1,59 @@
+my_recipes_dos_homepage:
+    path:     /
+    defaults: { _controller: MyRecipesDosBundle:Default:index }
+
+# Muestra el listado de recetas.
+recipes_list:
+    path:     /recipes/
+    host:     elrincondelaura.com
+    defaults: { _controller: MyRecipesDosBundle:Recipe:list }
+    methods:  GET
+
+# Creo una receta.
+recipes_create:
+    path:     /recipes/create/
+    host:     elrincondelaura.com
+    defaults: { _controller: MyRecipesDosBundle:Recipe:create }
+
+# Modifico una receta.
+recipes_update:
+    path:     /recipes/update/{recipe_id}
+    host:     elrincondelaura.com
+    defaults: { _controller: MyRecipesDosBundle:Recipe:update }
+    methods:  GET
+
+# Elimino una receta.
+recipes_delete:
+    path:     /recipes/delete/{recipe_id}
+    host:     elrincondelaura.com
+    defaults: { _controller: MyRecipesDosBundle:Recipe:delete }
+    methods:  GET
+
+# Muestra la receta concreta indicada por url.
+recipes_show:
+    path:     /recipes/{recipe_url}
+    host:     elrincondelaura.com
+    defaults: { _controller: MyRecipesDosBundle:Recipe:show, recipe_url: no-name }
+    methods:  GET
+    requirements:
+        recipe_url: "[a-zA-Z-]{2,50}"
+
+# Creo un autor.
+author_create:
+    path:     /authors/create/
+    host:     elrincondelaura.com
+    defaults: { _controller: MyRecipesDosBundle:Author:create }
+
+# muestra el listado de autores.
+authors_list:
+    path:     /authors/
+    host:     elrincondelaura.com
+    defaults: { _controller: MyRecipesDosBundle:Author:list }
+    methods:  GET
+
+# Elimino un autor.
+authors_delete:
+    path:     /authors/delete/{author_id}
+    host:     elrincondelaura.com
+    defaults: { _controller: MyRecipesDosBundle:Author:delete }
+    methods:  GET

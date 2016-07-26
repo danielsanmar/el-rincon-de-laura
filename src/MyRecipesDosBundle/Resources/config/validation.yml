@@ -1,0 +1,17 @@
+MyRecipesDosBundle\Entity\Recipe:
+    properties:
+        url:
+            - NotBlank: ~
+        name:
+            - NotBlank: ~
+        description:
+            - NotBlank: ~
+
+MyRecipesDosBundle\Entity\Author:
+    properties:
+        name:
+            - NotBlank: ~
+        surname:
+            - NotBlank: ~
+
+
